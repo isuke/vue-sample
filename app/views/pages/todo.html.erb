@@ -1,0 +1,20 @@
+<h1>ToDo</h1>
+
+<div id="task-list">
+  <div>
+    <input type="text" v-model="newTask.title" placeholder="タイトル"><span v-text="errors.title"></span><br>
+    <input type="text" v-model="newTask.assign" placeholder="担当者"><span v-text="errors.assign"></span><br>
+    <button v-on="click: submit">登録</button>
+  </div>
+
+  <table>
+    <tr>
+      <th>タイトル</th><th>担当者</th>
+    </tr>
+    <tr v-repeat="list">
+      <td>{{title}}</td>
+      <td>{{assign}}</td>
+    </tr>
+  </table>
+</div>
+
