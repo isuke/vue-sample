@@ -9,11 +9,12 @@
 
   <table>
     <tr>
-      <th>タイトル</th><th>担当者</th>
+      <th>タイトル</th><th>担当者</th><th></th>
     </tr>
     <tr v-repeat="list">
       <td>{{title}}</td>
       <td>{{assign}}</td>
+      <td><button v-on="click: destroy(this)">削除</button></td>
     </tr>
   </table>
 </div>

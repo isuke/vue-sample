@@ -21,4 +21,13 @@ $ ->
           error: (result) ->
             data.errors = result.responseJSON
         })
+      destroy: (task)->
+        data = @$data
+        $.ajax("/tasks/#{task.id}", {
+          type: "delete", contentType: "application/json",
+          success: (result) ->
+            # TODO
+            for t, i in data.list
+              data.list.splice i, 1 if task.id == t.id
+        })
   )
